@@ -1,0 +1,38 @@
+import java.util.ArrayList;
+
+public class Todo {
+    ArrayList<String> TodoLists = new ArrayList<>();
+
+    public void addTask(String description, int priority, int minutes) {
+        if (priority > 5 || priority < 1) {
+            System.out.println(description + " has invalid priority ");
+        }
+        if (minutes < 0) {
+            System.out.println(description + " has invalid workload ");
+        }
+        TodoLists.add(Task1.class.getName());
+    }
+
+    public void getTodoList() {
+        TodoLists.forEach(item->System.out.println(Task1.class.getName().toString()));
+    }
+
+    public void print() {
+        System.out.println("Todo Lists:");
+        System.out.println("-----");
+        getTodoList();
+        if (TodoLists == null) {
+            System.out.println("You're all done for today! #TodoZero");
+        }
+    }
+
+    public static void main(String[] args) {
+        Task1 task;
+        Todo todo;
+        todo = new Todo();
+        todo.addTask("Gym", 2, 60);
+        todo.addTask("Read book", 1, 45);
+        todo.print();
+        System.out.print("");
+    }
+}
